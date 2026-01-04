@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Use - Any Browser Android App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --android-green: #3ddc84;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--android-green);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-text span {
+            color: var(--android-green);
+        }
+
+        .android-badge {
+            background-color: var(--android-green);
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--android-green);
+            color: var(--android-green);
+        }
+
+        /* Terms Content */
+        .terms-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .terms-header h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .terms-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .terms-container {
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--android-green);
+        }
+
+        .last-updated strong {
+            color: var(--secondary);
+        }
+
+        .agreement-notice {
+            background-color: #fef3c7;
+            border: 1px solid #fbbf24;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #f59e0b;
+        }
+
+        .agreement-notice p {
+            margin: 0;
+            color: #92400e;
+            font-weight: 600;
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        ul {
+            margin: 15px 0 25px 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #475569;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        li:before {
+            content: "•";
+            color: var(--android-green);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        strong {
+            color: var(--secondary);
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid #ef4444;
+        }
+
+        .warning-box p {
+            margin: 0;
+            color: #991b1b;
+        }
+
+        .info-box {
+            background-color: #eff6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #1e40af;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--android-green);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .terms-header h1 {
+                font-size: 2rem;
+            }
+
+            .terms-container {
+                padding: 30px 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .terms-header {
+                padding: 40px 0 30px;
+            }
+
+            .terms-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .terms-container {
+                padding: 20px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="logo-text">Any<span>Browser</span></div>
+                    <div class="android-badge">ANDROID</div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Terms Header -->
+    <div class="terms-header">
+        <div class="container">
+            <h1>Terms of Use</h1>
+            <p>Read the terms and conditions for using Any Browser Android App</p>
+        </div>
+    </div>
+
+    <!-- Terms Content -->
+    <div class="container">
+        <div class="terms-container">
+            <div class="last-updated">
+                <strong>Last updated:</strong> 2026
+            </div>
+
+            <div class="agreement-notice">
+                <p>
+                    <i class="fas fa-exclamation-triangle" style="margin-right: 10px;"></i>
+                    By downloading, installing, or using the Any Browser Android App ("App"),
+                    you agree to comply with and be bound by these Terms of Use.
+                    If you do not agree with these terms, please do not use the App.
+                </p>
+            </div>
+
+            <h2>Use of the App</h2>
+            <p>
+                Any Browser is provided for personal and lawful use only.
+                You agree not to use the App for any illegal, harmful, or unauthorized activities.
+            </p>
+
+            <h2>User Responsibility</h2>
+            <p>
+                You are responsible for:
+            </p>
+            <ul>
+                <li>All activities performed using the App</li>
+                <li>Content you access, download, or share through the App</li>
+                <li>Complying with applicable laws and regulations</li>
+            </ul>
+
+            <div class="info-box">
+                <p>
+                    <i class="fas fa-info-circle" style="margin-right: 10px;"></i>
+                    Any Browser acts only as a web browser tool. You are responsible for the content you access.
+                </p>
+            </div>
+
+            <h2>Web Content Disclaimer</h2>
+            <p>
+                Any Browser acts only as a web browser.
+                We do not control, host, or endorse any third-party websites or content accessed through the App.
+            </p>
+
+            <h2>Advertisements</h2>
+            <p>
+                The App may display advertisements provided by third-party ad networks such as Google AdMob.
+                We are not responsible for the content of these ads.
+            </p>
+
+            <h2>Intellectual Property</h2>
+            <p>
+                All trademarks, logos, app design, and content related to Any Browser
+                are the property of their respective owners and protected by applicable laws.
+            </p>
+
+            <h2>Prohibited Activities</h2>
+            <p>
+                You agree not to:
+            </p>
+            <ul>
+                <li>Attempt to reverse engineer or modify the App</li>
+                <li>Use the App to distribute malware or harmful content</li>
+                <li>Interfere with the security or performance of the App</li>
+                <li>Use the App for any illegal purposes</li>
+                <li>Bypass any security features of the App</li>
+            </ul>
+
+            <div class="warning-box">
+                <p>
+                    <i class="fas fa-ban" style="margin-right: 10px;"></i>
+                    Violation of these prohibited activities may result in termination of your access to the App.
+                </p>
+            </div>
+
+            <h2>Limitation of Liability</h2>
+            <p>
+                Any Browser is provided "as is" without warranties of any kind.
+                We are not liable for any damages arising from the use or inability to use the App.
+            </p>
+
+            <h2>Termination</h2>
+            <p>
+                We reserve the right to suspend or terminate access to the App at any time,
+                without prior notice, if these Terms are violated.
+            </p>
+
+            <h2>Changes to These Terms</h2>
+            <p>
+                We may update these Terms of Use from time to time.
+                Continued use of the App after changes means you accept the updated terms.
+            </p>
+
+            <h2>Contact Us</h2>
+            <p>
+                If you have any questions about these Terms of Use, contact us at:
+            </p>
+            
+            <div class="contact-info">
+                <p>
+                    <i class="fas fa-envelope" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Email:</strong> support@anybrowser.com
+                </p>
+                <p>
+                    <i class="fas fa-globe" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Website:</strong> www.anybrowser.in
+                </p>
+                <p>
+                    <i class="fas fa-file-alt" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Related:</strong> <a href="Privacy Policy.html" style="color: var(--android-green);">Privacy Policy</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Any<span>Browser</span> <span style="color: white; font-size: 14px;">Android</span></div>
+            <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto 20px;">
+                The fastest and most secure browser for Android devices.
+            </p>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Any Browser Android App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links within the page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === "#") return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

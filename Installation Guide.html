@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation Guide - Any Browser Android App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --android-green: #3ddc84;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--android-green);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-text span {
+            color: var(--android-green);
+        }
+
+        .android-badge {
+            background-color: var(--android-green);
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--android-green);
+            color: var(--android-green);
+        }
+
+        /* Guide Content */
+        .guide-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .guide-header h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .guide-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .guide-container {
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--android-green);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .last-updated strong {
+            color: var(--secondary);
+        }
+
+        .method-card {
+            background: #f8fafc;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid #e2e8f0;
+        }
+
+        .method-card h2 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--secondary);
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .method-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: var(--android-green);
+            color: white;
+            border-radius: 50%;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        h2, h3 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        ul, ol {
+            margin: 15px 0 25px 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            color: #475569;
+            position: relative;
+            padding-left: 10px;
+        }
+
+        ol li {
+            counter-increment: step-counter;
+            margin-bottom: 15px;
+            padding-left: 40px;
+        }
+
+        ol li:before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--android-green);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        ul li:before {
+            content: "✓";
+            color: var(--android-green);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        strong {
+            color: var(--secondary);
+        }
+
+        .note-box {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid var(--primary);
+        }
+
+        .note-box strong {
+            color: #0369a1;
+        }
+
+        .warning-box {
+            background-color: #fef2f2;
+            border: 1px solid #fecaca;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid #ef4444;
+        }
+
+        .warning-box strong {
+            color: #991b1b;
+        }
+
+        .success-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+            border-left: 4px solid var(--android-green);
+        }
+
+        .success-box strong {
+            color: #166534;
+        }
+
+        .step-icon {
+            color: var(--android-green);
+            margin-right: 10px;
+            width: 24px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--android-green);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin: 10px 0;
+        }
+
+        .quick-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .quick-links a {
+            color: var(--android-green);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            transition: all 0.3s;
+        }
+
+        .quick-links a:hover {
+            background: rgba(61, 220, 132, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .guide-header h1 {
+                font-size: 2rem;
+            }
+
+            .guide-container {
+                padding: 30px 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+
+            .method-card {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .guide-header {
+                padding: 40px 0 30px;
+            }
+
+            .guide-header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .guide-container {
+                padding: 20px 15px;
+            }
+            
+            ol li {
+                padding-left: 35px;
+            }
+            
+            ol li:before {
+                width: 24px;
+                height: 24px;
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="logo-text">Any<span>Browser</span></div>
+                    <div class="android-badge">ANDROID</div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Guide Header -->
+    <div class="guide-header">
+        <div class="container">
+            <h1>Installation Guide</h1>
+            <p>Step-by-step instructions to install Any Browser on your Android device</p>
+        </div>
+    </div>
+
+    <!-- Guide Content -->
+    <div class="container">
+        <div class="guide-container">
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i>
+                <strong>Last updated:</strong> 2026
+            </div>
+
+            <p>
+                This guide explains how to install the <strong>Any Browser Android App</strong>
+                on your Android device safely and easily.
+            </p>
+
+            <h2>System Requirements</h2>
+            <ul>
+                <li><i class="fas fa-mobile-alt step-icon"></i> Android device running Android 8.0 (Oreo) or higher</li>
+                <li><i class="fas fa-wifi step-icon"></i> Stable internet connection</li>
+                <li><i class="fas fa-hdd step-icon"></i> Minimum 50MB free storage space</li>
+                <li><i class="fas fa-battery-three-quarters step-icon"></i> At least 20% battery recommended</li>
+            </ul>
+
+            <div class="method-card">
+                <h2><span class="method-number">1</span> Method 1: Install from APK File</h2>
+                <p>
+                    Follow these steps to install Any Browser using the APK file:
+                </p>
+                <ol>
+                    <li>Download the Any Browser APK from our official website</li>
+                    <li>Open <strong>Settings → Security</strong> on your device</li>
+                    <li>Enable <strong>"Install from unknown sources"</strong> for your browser or file manager</li>
+                    <li>Locate the downloaded APK file in your Downloads folder</li>
+                    <li>Tap the APK file and select <strong>Install</strong></li>
+                    <li>Wait for installation to complete (approx. 30 seconds)</li>
+                    <li>Tap <strong>Open</strong> or find Any Browser in your app drawer</li>
+                </ol>
+                
+                <div class="note-box">
+                    <p>
+                        <i class="fas fa-shield-alt"></i> 
+                        <strong>Security Note:</strong> Always download APK files only from trusted and official sources like our website to avoid malware.
+                    </p>
+                </div>
+            </div>
+
+            <div class="method-card">
+                <h2><span class="method-number">2</span> First-Time Setup</h2>
+                <ul>
+                    <li><i class="fas fa-check-circle step-icon"></i> Open Any Browser after installation</li>
+                    <li><i class="fas fa-check-circle step-icon"></i> Allow required permissions (Internet access is required)</li>
+                    <li><i class="fas fa-check-circle step-icon"></i> Optional: Grant storage permission for downloads</li>
+                    <li><i class="fas fa-check-circle step-icon"></i> Set Any Browser as default browser (optional)</li>
+                    <li><i class="fas fa-check-circle step-icon"></i> Customize your homepage and settings</li>
+                    <li><i class="fas fa-check-circle step-icon"></i> Start browsing the web securely!</li>
+                </ul>
+                
+                <div class="success-box">
+                    <p>
+                        <i class="fas fa-rocket"></i> 
+                        <strong>Tip:</strong> Any Browser is optimized for speed and privacy. Explore settings to enable data saver and ad blocker.
+                    </p>
+                </div>
+            </div>
+
+            <h2>Troubleshooting Common Issues</h2>
+            <div class="warning-box">
+                <p>
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    <strong>If installation fails, try these solutions:</strong>
+                </p>
+            </div>
+            <ul>
+                <li><i class="fas fa-sd-card step-icon"></i> <strong>Storage Space:</strong> Clear some storage space (need at least 50MB free)</li>
+                <li><i class="fas fa-mobile step-icon"></i> <strong>Android Version:</strong> Ensure your Android version is 8.0 or higher</li>
+                <li><i class="fas fa-redo step-icon"></i> <strong>Restart Device:</strong> Restart your device and try installation again</li>
+                <li><i class="fas fa-download step-icon"></i> <strong>Corrupted File:</strong> Re-download the APK if the file is corrupted</li>
+                <li><i class="fas fa-shield-alt step-icon"></i> <strong>Security Settings:</strong> Check if "Install unknown apps" is enabled</li>
+            </ul>
+
+            <h2>Uninstallation Guide</h2>
+            <p>
+                To uninstall Any Browser from your device:
+            </p>
+            <ol>
+                <li>Go to <strong>Settings → Apps → App Management</strong></li>
+                <li>Find and select <strong>Any Browser</strong> from the app list</li>
+                <li>Tap <strong>Uninstall</strong> and confirm</li>
+                <li>Optional: Clear any remaining data/cache</li>
+            </ol>
+
+            <h2>Need Help?</h2>
+            <p>
+                If you face any issues during installation or need further assistance:
+            </p>
+            
+            <div class="contact-info">
+                <p>
+                    <i class="fas fa-envelope" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Email Support:</strong> support@anybrowser.com
+                </p>
+                <p>
+                    <i class="fas fa-globe" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Website:</strong> www.anybrowser.in
+                </p>
+                <p>
+                    <i class="fas fa-question-circle" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>FAQ:</strong> <a href="index.html#faq" style="color: var(--android-green);">Visit FAQ Section</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Any<span>Browser</span> <span style="color: white; font-size: 14px;">Android</span></div>
+            <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto 20px;">
+                The fastest and most secure browser for Android devices.
+            </p>
+            
+            <div class="quick-links">
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="Privacy Policy.html"><i class="fas fa-shield-alt"></i> Privacy Policy</a>
+                <a href="Terms of Use.html"><i class="fas fa-file-contract"></i> Terms of Use</a>
+                <a href="index.html#download"><i class="fas fa-download"></i> Download</a>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Any Browser Android App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links within the page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === "#") return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

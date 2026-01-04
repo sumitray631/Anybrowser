@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Any Browser Android App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --android-green: #3ddc84;
+            --secondary: #0f172a;
+            --light: #f8fafc;
+            --gray: #64748b;
+        }
+
+        body {
+            background-color: #f1f5f9;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            padding: 20px 0;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-icon {
+            color: var(--android-green);
+            font-size: 28px;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .logo-text span {
+            color: var(--android-green);
+        }
+
+        .android-badge {
+            background-color: var(--android-green);
+            color: white;
+            font-size: 12px;
+            padding: 4px 10px;
+            border-radius: 20px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: white;
+            color: var(--secondary);
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s;
+        }
+
+        .back-btn:hover {
+            border-color: var(--android-green);
+            color: var(--android-green);
+        }
+
+        /* Policy Content */
+        .policy-header {
+            text-align: center;
+            padding: 60px 0 40px;
+        }
+
+        .policy-header h1 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+
+        .policy-header p {
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        .policy-container {
+            background: white;
+            border-radius: 12px;
+            padding: 50px;
+            margin-bottom: 60px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
+        }
+
+        .last-updated {
+            background: linear-gradient(135deg, #d1fae5 0%, #ecfdf5 100%);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--android-green);
+        }
+
+        .last-updated strong {
+            color: var(--secondary);
+        }
+
+        h2 {
+            color: var(--secondary);
+            margin: 30px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #475569;
+        }
+
+        ul {
+            margin: 15px 0 25px 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            color: #475569;
+        }
+
+        strong {
+            color: var(--secondary);
+        }
+
+        .highlight-box {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            margin: 0;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 40px 0 30px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo span {
+            color: var(--android-green);
+        }
+
+        .copyright {
+            padding-top: 20px;
+            border-top: 1px solid #334155;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .contact-info {
+            background-color: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px auto;
+            max-width: 500px;
+        }
+
+        .contact-info p {
+            color: #cbd5e1;
+            margin: 10px 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-header h1 {
+                font-size: 2rem;
+            }
+
+            .policy-container {
+                padding: 30px 20px;
+            }
+
+            .navbar {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+
+            .logo {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .policy-header {
+                padding: 40px 0 30px;
+            }
+
+            .policy-header h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <div class="logo-text">Any<span>Browser</span></div>
+                    <div class="android-badge">ANDROID</div>
+                </div>
+                
+                <a href="index.html" class="back-btn">
+                    <i class="fas fa-arrow-left"></i>
+                    Back to Home
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Policy Header -->
+    <div class="policy-header">
+        <div class="container">
+            <h1>Privacy Policy</h1>
+            <p>Your privacy is important to us. Read how we protect your information.</p>
+        </div>
+    </div>
+
+    <!-- Policy Content -->
+    <div class="container">
+        <div class="policy-container">
+            <div class="last-updated">
+                <strong>Last updated:</strong> 2026
+            </div>
+
+            <p>
+                Any Browser Android App ("we", "our", "us") respects your privacy.
+                This Privacy Policy explains how we collect, use, and protect your information
+                when you use our application.
+            </p>
+
+            <h2>Information We Collect</h2>
+            <p>
+                Any Browser does <strong>not collect personal information</strong> such as name,
+                email address, phone number, or payment details.
+            </p>
+            <p>
+                We may collect limited non-personal information including:
+            </p>
+            <ul>
+                <li>App usage data (pages visited, features used)</li>
+                <li>Device information (device model, Android version)</li>
+                <li>Crash and error reports (for app improvement)</li>
+            </ul>
+
+            <h2>How We Use Information</h2>
+            <p>
+                The collected information is used only to:
+            </p>
+            <ul>
+                <li>Improve app performance</li>
+                <li>Fix bugs and crashes</li>
+                <li>Enhance user browsing experience</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p>
+                    <i class="fas fa-shield-alt" style="color: var(--android-green); margin-right: 10px;"></i>
+                    We do <strong>not sell, trade, or share</strong> your personal data with third parties.
+                </p>
+            </div>
+
+            <h2>Cookies and Web Data</h2>
+            <p>
+                Any Browser is a web browser application. Websites you visit may use cookies.
+                Cookies are managed by the respective websites and not by Any Browser.
+            </p>
+            <p>
+                Users can clear browsing data and cookies anytime from the app settings.
+            </p>
+
+            <h2>Third-Party Services</h2>
+            <p>
+                The app may use third-party services such as:
+            </p>
+            <ul>
+                <li>Google AdMob (for displaying ads)</li>
+                <li>Google Analytics (for app usage analysis)</li>
+            </ul>
+            <p>
+                These services may collect information as described in their own privacy policies.
+            </p>
+
+            <h2>Permissions</h2>
+            <p>
+                Any Browser requests only necessary permissions:
+            </p>
+            <ul>
+                <li>Internet access – for web browsing</li>
+                <li>Storage access – for downloads (optional)</li>
+            </ul>
+
+            <h2>Children's Privacy</h2>
+            <p>
+                Any Browser does not knowingly collect data from children under the age of 13.
+            </p>
+
+            <h2>Data Security</h2>
+            <p>
+                We use reasonable security measures to protect user information,
+                but no method of transmission over the internet is 100% secure.
+            </p>
+
+            <h2>Changes to This Privacy Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time.
+                Any changes will be posted on this page.
+            </p>
+
+            <h2>Contact Us</h2>
+            <p>
+                If you have any questions or concerns about this Privacy Policy, contact us at:
+            </p>
+            
+            <div class="contact-info">
+                <p>
+                    <i class="fas fa-envelope" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Email:</strong> support@anybrowser.com
+                </p>
+                <p>
+                    <i class="fas fa-globe" style="margin-right: 10px; color: var(--android-green);"></i>
+                    <strong>Website:</strong> www.anybrowser.in
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">Any<span>Browser</span> <span style="color: white; font-size: 14px;">Android</span></div>
+            <p style="color: #cbd5e1; max-width: 600px; margin: 0 auto 20px;">
+                The fastest and most secure browser for Android devices.
+            </p>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Any Browser Android App. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for anchor links within the page
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                
+                if (href === "#") return;
+                
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
